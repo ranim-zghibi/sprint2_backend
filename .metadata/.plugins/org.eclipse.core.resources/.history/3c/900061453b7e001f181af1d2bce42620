@@ -1,0 +1,11 @@
+package com.example.parfums.repos;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.parfums.entities.Parfum;
+
+public interface ParfumRepository extends JpaRepository<Parfum, Long> {
+	Parfum findByNomParfum (string nom);
+	
+
+}

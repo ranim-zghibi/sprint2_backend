@@ -1,0 +1,9 @@
+package com.example.parfums.entities;
+
+import org.springframework.data.rest.core.config.Projection;
+
+@Projection(name = "nomParfum", types = { Parfum.class })
+public interface ParfumProjection {
+	public String getNomParum();
+
+}

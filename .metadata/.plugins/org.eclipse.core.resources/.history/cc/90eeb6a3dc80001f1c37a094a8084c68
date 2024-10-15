@@ -1,0 +1,18 @@
+package com.example.parfums.repos;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.example.parfums.entities.Parfum;
+
+public interface ParfumRepository extends JpaRepository<Parfum, Long> {
+	List <Parfum> findByNomParfum (String nom);
+	List <Parfum> findByNomParfumContains (String nom);
+	@Query("select p from Parfum p where p.nomParfum like %?1 and p.prixParfum > ?2")
+	List<Parfum> findByNomPrix (String nom, Double prix);
+	
+	
+
+}
